@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>pl.java</groupId>
   <artifactId>maven-start</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.0.1</version>
   <name>001maven-start</name>
   <packaging>jar</packaging>
 </project>
