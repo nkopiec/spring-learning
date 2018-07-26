@@ -1,4 +1,4 @@
-package pl.java.maven_stepsForBuldingProject;
+package pl.java;
 
 /**
  * Hello world!
