@@ -3,8 +3,10 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean id="usersCreator" class="UsersCreator"/>
-	<bean id="sameUser" factory-bean="usersCreator" factory-method="createUser">
-		<constructor-arg value="Janek"/>	
+	<bean id="someString" class="java.lang.String"></bean>
+
+	<bean id="sameBean" class="pl.java.SameBeam">
+		<property name="sameString" value="jakis bean"></property>
+		<property name="sameInt" value="34"></property>
 	</bean>
 </beans>

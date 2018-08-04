@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="injectedBean1" class="pl.java.InjectedBean">
+		<property name="name" value="wstrzykiwany bean"/>
+	</bean>
+	
+	<bean id="injectedBean2" class="pl.java.InjectedBean" autowire-candidate="false">
+		<property name="name" value="wstrzykiwany bean2"/>
+	</bean>
+	
+	<bean id="sameBean" class="pl.java.SameBean" autowire="byName">
+	</bean>
+</beans>
