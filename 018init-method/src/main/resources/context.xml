@@ -3,8 +3,5 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean id="usersRepository" class="pl.java.UsersRepository"/>
-	<bean id="dictionaryRepositories" class="pl.java.DictionaryRepositories"/>
-	
-	<bean id="application" class="pl.java.Application" autowire="byType"/>
+	<bean id="sameBeans" class="pl.java.SameBeans" init-method="init"/>
 </beans>
