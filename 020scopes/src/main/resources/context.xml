@@ -3,5 +3,13 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-
+	<bean id="usersRepository" class="pl.java.UsersRepository" scope="prototype"></bean>
+	
+	<bean id="component1" class="pl.java.Component1">
+		<property name="usersRepository" ref="usersRepository"/>
+	</bean>
+	
+	<bean id="component2" class="pl.java.Component2">
+		<property name="usersRepository" ref="usersRepository"/>
+	</bean>
 </beans>
