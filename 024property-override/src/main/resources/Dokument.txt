@@ -1,0 +1,4 @@
+detabase.host=localhost
+detabase.port=43244
+detabase.user=janek
+detabase.password=secretpassword

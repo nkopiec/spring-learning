@@ -1,0 +1,4 @@
+host=124.8.7
+port=43244
+user=janek
+password=password

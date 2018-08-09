@@ -5,16 +5,6 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 
-	<context:property-placeholder location="${settingLocation}" />
-	
-	<bean id="someBean" class="pl.java.SomeBean">
-		<property name="property" value="${sameProperty}"></property>
-	</bean>
-	
-	<bean id="myDatebase" class="pl.java.DatabaseRepository">
-		<property name="host" value="${host}"/>	
-		<property name="port" value="${port}"/>	
-		<property name="user" value="${user}"/>	
-		<property name="password" value="${password}"/>	
-	</bean>
+	<context:property-override location="classpath:Dokument.txt"/>
+	<bean id="detabase" class="pl.java.DatabaseRepository"></bean>
 </beans>
