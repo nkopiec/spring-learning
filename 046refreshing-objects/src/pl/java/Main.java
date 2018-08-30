@@ -15,13 +15,20 @@ public class Main {
 		EntityManager entityManager = entityManagerFactory.createEntityManager();
 	
 		Employee employee = new Employee();
-		employee.setFirstName("Tomasz");
-		employee.setLastName("Daowski");
-		employee.setSalary(1236.5);
+		employee.setFirstName("Jan");
+		employee.setLastName("Podolski");
+		employee.setSalary(2006.5);
 		
 		entityManager.getTransaction().begin();
 		entityManager.persist(employee);
 		entityManager.getTransaction().commit();
+		
+		System.out.println("First name:" + employee.getFirstName());
+		System.out.println("Surname:" + employee.getLastName());
+		System.out.println("Salary: " + employee.getSalary());
+		System.out.println("Tax: " + employee.getTax());
+		
+		entityManager.refresh(employee);
 		
 		System.out.println("First name:" + employee.getFirstName());
 		System.out.println("Surname:" + employee.getLastName());

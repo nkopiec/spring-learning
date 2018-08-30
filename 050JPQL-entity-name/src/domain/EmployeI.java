@@ -7,9 +7,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
-@Entity
-public class Employee {
+@Entity(name = "Pracownik")
+@Table(name = "Pracownicy")
+public class EmployeI {
 	@Id
 	@GeneratedValue
 	private long id;

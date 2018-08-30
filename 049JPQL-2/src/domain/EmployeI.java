@@ -9,7 +9,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 @Entity
-public class Employee {
+public class EmployeI {
 	@Id
 	@GeneratedValue
 	private long id;
