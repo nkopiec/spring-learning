@@ -1,5 +1,6 @@
 package pl.java;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -34,8 +35,24 @@ public class Main {
 		System.out.println(average);
 		
 		EmployeIRepository employeIRepository = context.getBean("employeIRepository", EmployeIRepository.class);
-		EmployeI employeI = employeIRepository.getEmployeIById("1");
-		System.out.println(employeI);
+		EmployeI employeI1 = employeIRepository.getEmployeIById("1");
+		System.out.println(employeI1);
+		
+		List<EmployeI> allEmployeI = employeIRepository.getAllEmployeI();
+		for (EmployeI employeI2 : allEmployeI) {
+			System.out.println(employeI2);
+		}
+		
+		List<Map<String, Object>> salaryHight = employeIRepository.getSalaryHight(1000.00, 6000.00);
+		for (Map<String, Object> salary : salaryHight) {
+			System.out.println(salary);
+		}
+		
+		List<String> pprofesion = Collections.singletonList("Chef");
+		List<Map<String, Object>> profesions = employeIRepository.getProfesion(pprofesion);
+		for (Map<String, Object> profesion : profesions) {
+			System.out.println(profesion);
+		}
 		}
 	}
 

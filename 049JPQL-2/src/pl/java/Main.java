@@ -30,6 +30,7 @@ public class Main {
 			System.out.println(employeI.getFirstName());
 			System.out.println(employeI.getLastName());
 			System.out.println(employeI.getSalary());			
+			System.out.println(employeI.getProfesion());			
 		}
 
 		entityManager.close();
@@ -37,24 +38,25 @@ public class Main {
 	}
 	
 	private static void addEmployes() {
-		addEmployes("Stefan", "Kurowski", 1235.66);
-		addEmployes("Emilia", "Jêdzejczak", 3424.66);
-		addEmployes("W³adys³aw", "Jaszczur", 2466.33);
-		addEmployes("Tomasz", "Piotrowski", 3567.55);
-		addEmployes("Natalia", "Nowak", 6434.23);
-		addEmployes("Katarzyna", "Kania", 4524.33 );
-		addEmployes("¯aneta", "Wozniak", 4352.66);
-		addEmployes("Rafa³", "Jurkowski", 9753.33);
-		addEmployes("Krystian", "Pudian", 8337.33 );
-		addEmployes("Krzysztof", "Kurowski", 5432.12);
+		addEmployes("Stefan", "Kurowski", 1235.66, "Chef");
+		addEmployes("Emilia", "Jêdzejczak", 3424.66, "Waiter");
+		addEmployes("W³adys³aw", "Jaszczur", 2466.33, "Chef");
+		addEmployes("Tomasz", "Piotrowski", 3567.55, "Waiter");
+		addEmployes("Natalia", "Nowak", 6434.23, "Waiter");
+		addEmployes("Katarzyna", "Kania", 4524.33, "Driver");
+		addEmployes("¯aneta", "Wozniak", 4352.66, "Chef");
+		addEmployes("Rafa³", "Jurkowski", 9753.33, "Driver");
+		addEmployes("Krystian", "Pudian", 8337.33, "Chef");
+		addEmployes("Krzysztof", "Kurowski", 5432.12, "Driver");
 		
 	}
 	
-	private static void addEmployes(String firstName, String lastName, double salary) {
+	private static void addEmployes(String firstName, String lastName, double salary, String profesion) {
 		EmployeI employeI = new EmployeI();
 		employeI.setFirstName(firstName);
 		employeI.setLastName(lastName);
 		employeI.setSalary(salary);
+		employeI.setProfesion(profesion);;
 		
 	
 		entityManager.getTransaction().begin();
