@@ -4,7 +4,10 @@
 
 Servers/
 RemoteSystemsTempFiles/
-*/.settings/
 */target/
+*/bin/
+*/.settings/
 */.classpath
 */.project
+*/.springBeans
+*/.springWebflow
