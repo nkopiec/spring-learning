@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+
+	<bean id="someBean"
+		class="pl.java.SomeBean" />
+	<bean id="anotherBean" class="pl.java.AnotherBean"/>
+	<bean id="LoggingAspect" class="pl.java.LoggingAspect" />
+	<aop:config>	
+		<aop:pointcut expression="execution(* setSomething(..))" id="setSomethingExecution"/>
+		<aop:pointcut expression="execution(* *(..))" id="anyMethodExecution"/>
+		<aop:pointcut expression="execution(* set*(..)) || execution(* get*(..))" id="setterOrGetter"/>
+		<aop:pointcut expression="execution(* *())" id="parameterLessMethod"/>
+		<aop:pointcut expression="execution(* *(..))" id="anyNumberOfParameter"/>
+		<aop:pointcut expression="execution(* *(*))" id="onlyOneParameter"/>
+		<aop:pointcut expression="execution(* *(String))" id="onlyOneParameterString"/>
+		<aop:pointcut expression="execution(* *(*, ..))" id="withMoreParameters"/>
+		<aop:pointcut expression="execution(* *(String, *, ..))" id="withMoreAndStringParameters"/>
+		<aop:pointcut expression="execution(* pl.java.SomeBean.set*(..))" id="setterExecution"/>
+		<aop:aspect ref="LoggingAspect">
+			<aop:before method="logExecution" pointcut-ref="setterExecution" />
+		</aop:aspect>
+	</aop:config>
+</beans>
