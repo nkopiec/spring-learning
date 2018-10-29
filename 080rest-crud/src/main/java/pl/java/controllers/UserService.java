@@ -2,6 +2,9 @@ package pl.java.controllers;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class UserService {
 	private long id;
 	
