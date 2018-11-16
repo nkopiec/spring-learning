@@ -1,5 +1,7 @@
 package pl.java;
 
+import java.util.List;
+
 public class Product {
 	private String productName;
 	private double productPrice;
@@ -9,6 +11,9 @@ public class Product {
 		super();
 		this.productName = productName;
 		this.productPrice = productPrice;
+	}
+	public Product(List<String> productName, List<String> productPrice) {
+		// TODO Auto-generated constructor stub
 	}
 	public String getProductName() {
 		return productName;
