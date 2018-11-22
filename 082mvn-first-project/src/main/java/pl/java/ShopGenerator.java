@@ -46,6 +46,10 @@ import org.springframework.stereotype.Service;
 	    private long randomNumberOfShops() {
 	        return MIN_NUMBER_OF_SHOP + random.nextInt(MAX_NUMBER_OF_SHOP_MINUS_ONE);
 	    }
+	    
+	    private String generateName() {
+	    	return null;
+	    }
 
 	
 }

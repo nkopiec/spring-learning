@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RequestMapping("shops")
+@RequestMapping("${urls.shop.root}")
 @RestController
 public class ShopController {
 	 private final ShopRepository shopRepository;
@@ -29,10 +29,10 @@ public class ShopController {
 	        return shopRepository.findOne(name);
 	    }
 
-	    @GetMapping("{shopName}/products/{productName}")
-	    List<Product> findShopProductWithFirstName(
+	    @GetMapping("{shopName}/${urls.shop.products.root}/{productName}")
+	    List<Product> findShopProductWithProductName(
 	            @PathVariable String shopName,
-	            @PathVariable("ProductName") String name) {
+	            @PathVariable("productName") String name) {
 	        return findOne(shopName)
 	                .getProducts()
 	                .stream()
@@ -40,13 +40,13 @@ public class ShopController {
 	                .collect(Collectors.toList());
 	    }
 
-	    @GetMapping("{shopName}/products/{productPrice}/{productName}")
-	    List<Product> findShopProductWithProductNameAndProductPrice(@PathVariable Map<String, String> pathVariable) {
+	    @GetMapping("{shopName}/${urls.shop.products.root}/{productProducent}/{productName}")
+	    List<Product> findShopProductWithProductNameAndProductProducent(@PathVariable Map<String, String> pathVariable) {
 	        return findOne(pathVariable.get("shopName"))
 	                .getProducts()
 	                .stream()
 	                .filter(product -> Objects.equals(product.getProductName(), pathVariable.get("productName")))
-	                .filter(product -> Objects.equals(product.getProductPrice(), pathVariable.get("productPrice")))
+	                .filter(product -> Objects.equals(product.getProductProducent(), pathVariable.get("productProducent")))
 	                .collect(Collectors.toList());
 	    }
 }

@@ -1,34 +1,29 @@
 package pl.java;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 public class Product {
 	private String productName;
-	private double productPrice;
+	private String productProducent;
+	private BigDecimal productPrice;
 	
-	
-	public Product(String productName, double productPrice) {
+	Product(String productName, String productProducent, BigDecimal productPrice) {
 		super();
 		this.productName = productName;
+		this.productProducent = productProducent;
 		this.productPrice = productPrice;
 	}
-	public Product(List<String> productName, List<String> productPrice) {
-		// TODO Auto-generated constructor stub
-	}
+	
 	public String getProductName() {
 		return productName;
 	}
-	public void setProductName(String productName) {
-		this.productName = productName;
+	
+	public String getProductProducent() {
+		return productProducent;
 	}
-	public double getProductPrice() {
+	
+	public BigDecimal getProductPrice() {
 		return productPrice;
 	}
-	public void setProductPrice(double productPrice) {
-		this.productPrice = productPrice;
-	}
-	
-	
-
-	
 }

@@ -1,0 +1,6 @@
+urls:
+  shop:
+    root: shops
+    products:
+      root: products
+   
