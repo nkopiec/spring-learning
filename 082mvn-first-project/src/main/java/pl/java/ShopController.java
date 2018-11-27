@@ -29,7 +29,7 @@ public class ShopController {
 	        return shopRepository.findOne(name);
 	    }
 
-	    @GetMapping("{shopName}/${urls.shop.products.root}/{productName}")
+	    @GetMapping("{shopName}/${urls.shop.products.root}/{productName:[a-zA-Z]+}")
 	    List<Product> findShopProductWithProductName(
 	            @PathVariable String shopName,
 	            @PathVariable("productName") String name) {
@@ -38,6 +38,19 @@ public class ShopController {
 	                .stream()
 	                .filter(product -> Objects.equals(product.getProductName(), name))
 	                .collect(Collectors.toList());
+	    }
+	    
+	    @GetMapping("{shopName}/${urls.shop.products.root}/{productId:\\d+}")
+	    Product findShopProductWithId(
+	    		 @PathVariable String shopName,
+	    		 @PathVariable Long productId
+	    		)	{
+	    	return findOne(shopName)
+	                .getProducts()
+	                .stream()
+	                .filter(product -> product.getId() == productId)
+	                .findAny()
+	                .orElse(null);
 	    }
 
 	    @GetMapping("{shopName}/${urls.shop.products.root}/{productProducent}/{productName}")
